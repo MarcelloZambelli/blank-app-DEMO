@@ -1,37 +1,22 @@
 import streamlit as st
+from custom import top_menu, bottom_head
 
-st.set_page_config(page_title="Info - PLview", page_icon="ℹ️", layout="wide")
+top_menu()
 
 # ── Header Section ───────────────────────────────────────────────────
-st.title("ℹ️ Project Information")
-st.markdown("""
-    Welcome to **PLview**, the ultimate data exploration suite for powerlifting. 
-    Whether you're a coach seeking a competitive edge or a curious lifter wondering how 
-    you stack up against the global average, we've got the charts for you.
-""")
 
-st.markdown("---")
-
-# ── The Engine Room (Sources) ────────────────────────────────────────
+# ── Sources ────────────────────────────────────────
 st.header("🗄️ The Data Engine")
+st.write("In this page there will be info about the project")
 col1, col2 = st.columns([1, 2])
 
 with col1:
-    # Humor: No creatine was used (Actually, it was)
     st.image("https://gitlab.com/uploads/-/system/project/avatar/6722790/favicon.png", width=200)
 
 with col2:
-    st.subheader("Data Source: OpenPowerlifting")
+    st.subheader("Data Source: ")
     st.write("""
-        At the heart of PLview lies the **OpenPowerlifting** database—the gold standard 
-        for strength sports records. This project is possible thanks to the tireless 
-        volunteers who archive every single attempt in the sport's history.
-        
-        *   **Dataset Scope**: Over **120,000+** unique contest results.
-        *   **Cleaning Process**: We've removed anomalies (like the 0kg SHW squatters) 
-            to ensure that the "Average" truly represents the reality of the platform.
-        *   **Disclaimer**: This app is for informational purposes. While our math is 
-            precise, it does not guarantee your 3rd deadlift will move. 
+        At the heart of  
     """)
 
 st.markdown("---")
@@ -63,36 +48,4 @@ with st.expander("📈 Trend Path: The Road to White Lights"):
           it might mean your opener is too heavy or your 2nd is too conservative.
     """)
 
-st.markdown("---")
-
-# ── Humor & Credits ──────────────────────────────────────────────────
-st.header("🧠 About the Project")
-st.info("""
-    **PLview** was born from a passion for both brute force and clean data. 
-    It was created as a final project for a **Data Visualization University Course**, 
-    proving once and for all that engineers can (sometimes) bench press.
-""")
-
-st.write("---")
-
-# ── Contacts Row ─────────────────────────────────────────────────────
-st.header("✉️ Get in Touch")
-st.write("Found a bug? Have a feature request? Or just want to brag about your new PR?")
-
-c1, c2 = st.columns(2)
-
-with c1:
-    st.markdown("#### 📧 Email (Muscles)")
-    st.code("placeholder.one@example.com")
-    st.markdown("#### 🔗 LinkedIn")
-    st.markdown("[Visit Profile One](https://www.linkedin.com/in/placeholder1/)")
-
-with c2:
-    st.markdown("#### 📧 Email (Brain)")
-    st.code("placeholder.two@example.com")
-    st.markdown("#### 🔗 LinkedIn")
-    st.markdown("[Visit Profile Two](https://www.linkedin.com/in/placeholder2/)")
-
-
-st.markdown("<br><br>", unsafe_allow_html=True)
-st.caption("PLview v1.0.0 | Powered by Python, Streamlit, Creatine and 100% Pure Data.")
+bottom_head()
