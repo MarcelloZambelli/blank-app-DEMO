@@ -71,6 +71,7 @@ def inject_custom_css():
 
 inject_custom_css()
 
+
 pages = {
     "Race compare": st.Page("pages/race_comp.py", title="Home", icon="🏠"),
     "Athlete compare": st.Page("pages/athlete_comp.py", title="Athletes", icon="🏋️"),
@@ -85,9 +86,10 @@ with st.container():
     
     with headerNavLinks[0]: 
         st.markdown('<div class="nav-logo">PL<span>view</span></div>', unsafe_allow_html=True)
-    with headerNavLinks[1]: st.page_link(pages["Race compare"], label="Home", icon="🏠", use_container_width=True)
+    with headerNavLinks[1]: st.page_link(pages["Race compare"], label="Race", icon="🏠", use_container_width=True)
     with headerNavLinks[2]: st.page_link(pages["Athlete compare"], label="Athletes", icon="🏋️", use_container_width=True)
     with headerNavLinks[3]: st.page_link(pages["Records"], label="Records", icon="🏆", use_container_width=True)
     with headerNavLinks[4]: st.page_link(pages["Info"], label="Info", icon="ℹ️", use_container_width=True)
+
 
 st.markdown("---")
