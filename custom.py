@@ -82,7 +82,7 @@ def top_menu():
         }
     # Render top navigation using native columns
     with st.container():
-        headerNavLinks = st.columns([.5, 1.25, 1.25, 1.25, .75])
+        headerNavLinks = st.columns([.55, 1.3, 1.3, 1.3, .55])
         with headerNavLinks[0]: st.page_link(pages["Home"], label="IM view", use_container_width=True)
         with headerNavLinks[1]: st.page_link(pages["Race compare"], label="Race compare", use_container_width=True)
         with headerNavLinks[2]: st.page_link(pages["Athlete compare"], label="Athletes", use_container_width=True)
@@ -105,7 +105,7 @@ def bottom_head():
     c0, c1, c2 = st.columns(3)
 
     with c0:
-        st.page_link(st.Page("pages/rate_page.py"), label="Rate us!", use_container_width=True)
+        st.page_link(st.Page("pages/rate_page.py"), label="Rate us!")
 
     with c1:
         st.markdown(" 📧 Email")
