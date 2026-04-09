@@ -33,10 +33,10 @@ def top_menu():
                 90deg,
                 #343434 0%,
                 #343434 15%,
-                #d32f2f 15%,
-                #d32f2f 35%,
-                #1976d2 40%,
-                #1976d2 57.5%,
+                #1976d2 15%,
+                #1976d2 35%,
+                #d32f2f 40%,
+                #d32f2f 57.5%,
                 #d4af37 62.5%,
                 #d4af37 80%,
                 #e0e0e0 85%,
@@ -74,11 +74,11 @@ def top_menu():
     )
 
     pages = {
-        "Home": st.Page("streamlit_app.py", title="Main page"),
-        "Race compare": st.Page("pages/race_comp.py", title="Race compare", icon="🏠"),
-        "Athlete compare": st.Page("pages/athlete_comp.py", title="Athlete compare", icon="🏋️"),
-        "Records": st.Page("pages/records.py", title="Records", icon="🏆"),
-        "Info": st.Page("pages/info.py", title="Info", icon="ℹ️")
+        "Home": st.Page("streamlit_app.py"),
+        "Race compare": st.Page("pages/race_comp.py", icon="🏠"),
+        "Athlete compare": st.Page("pages/athlete_comp.py", icon="🏋️"),
+        "Records": st.Page("pages/records.py", icon="🏆"),
+        "Info": st.Page("pages/info.py", icon="ℹ️")
         }
     # Render top navigation using native columns
     with st.container():
@@ -96,19 +96,23 @@ def top_menu():
 
 
 
+
 def bottom_head():
     st.markdown("---")
     st.header("✉️ Get in Touch")
-    st.write("Found a bug? Have a feature request? Want to rate us?")
+    st.write("Want to rate your experience on this site? Found a bug? Have a feature request?")
 
-    c1, c2 = st.columns(2)
+    c0, c1, c2 = st.columns(3)
+
+    with c0:
+        st.page_link(st.Page("pages/rate_page.py"), label="Rate us!", use_container_width=True)
 
     with c1:
-        st.markdown("#### 📧 Email")
+        st.markdown(" 📧 Email")
         st.code("placeholder.one@example.com")
 
     with c2:
-        st.markdown("#### 📧 Email")
+        st.markdown(" 📧 Email")
         st.code("placeholder.two@example.com")
 
 
